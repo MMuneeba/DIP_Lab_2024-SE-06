@@ -3,118 +3,6 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
 
-LABS = {
-    "DIP_Lab_01": {
-        "title": "Python Setup, Fundamentals, and Imports",
-        "objective": (
-            "Learn Python setup, basic programming concepts, "
-            "functions, collections, and package imports."
-        ),
-        "topics": [
-            "Python installation and VS Code setup",
-            "Variables and data types",
-            "Conditional statements",
-            "For and while loops",
-            "Functions and return values",
-            "Lists, tuples, dictionaries, and sets",
-            "Installing and importing Python libraries",
-        ],
-        "outcomes": [
-            "Understand basic Python syntax.",
-            "Write conditional statements and loops.",
-            "Create reusable functions.",
-            "Work with Python collections.",
-            "Install and import external packages.",
-        ],
-        "tools": ["Python", "VS Code", "NumPy", "Pillow", "Matplotlib"],
-    },
-
-    "DIP_Lab_02": {
-        "title": "Digital Images, Pixels, Color, and Basic Transformations",
-        "objective": (
-            "Load, inspect, display, analyze, and transform digital "
-            "images using Python libraries."
-        ),
-        "topics": [
-            "Reading and displaying digital images",
-            "Image dimensions, shape, and data types",
-            "Pixel coordinates and pixel values",
-            "RGB and BGR color spaces",
-            "Grayscale conversion and color channels",
-            "Image cropping and resizing",
-            "Grayscale histograms",
-            "Image bit depth and intensity levels",
-        ],
-        "outcomes": [
-            "Understand image dimensions and pixel values.",
-            "Identify color channels.",
-            "Convert color images to grayscale.",
-            "Crop and resize images.",
-            "Plot grayscale histograms.",
-            "Understand resolution and bit depth.",
-        ],
-        "tools": ["Python", "Jupyter Notebook", "NumPy", "OpenCV", "Matplotlib"],
-    },
-
-    "DIP_Lab_03": {
-        "title": "Image Enhancement and Intensity Transformations",
-        "objective": (
-            "Implement and compare intensity transformations and "
-            "histogram-based image enhancement techniques."
-        ),
-        "topics": [
-            "Brightness adjustment",
-            "Linear contrast enhancement",
-            "Contrast stretching",
-            "Image negative transformation",
-            "Gamma correction",
-            "Grayscale histogram analysis",
-            "Histogram equalization",
-            "CLAHE",
-            "Binary thresholding",
-            "Otsu thresholding",
-            "Adaptive Gaussian thresholding",
-        ],
-        "outcomes": [
-            "Apply brightness and contrast transformations.",
-            "Understand gamma correction.",
-            "Analyze grayscale histograms.",
-            "Perform histogram equalization.",
-            "Apply global and adaptive thresholding.",
-            "Compare image enhancement results.",
-        ],
-        "tools": ["Python", "Jupyter Notebook", "NumPy", "OpenCV", "Matplotlib"],
-    },
-
-    "DIP_Lab_04": {
-        "title": "Geometric Transformations with Custom Inputs",
-        "objective": (
-            "Build a reusable image transformation function that "
-            "accepts custom parameters and validates user inputs."
-        ),
-        "topics": [
-            "Image scaling and resizing",
-            "Image cropping",
-            "Horizontal and vertical flipping",
-            "Image translation",
-            "Image rotation",
-            "Interpolation methods",
-            "Canvas expansion and clipping",
-            "Input validation and error handling",
-        ],
-        "outcomes": [
-            "Resize images using custom scale factors.",
-            "Crop images using coordinate boundaries.",
-            "Flip images in different directions.",
-            "Translate images using custom offsets.",
-            "Rotate images with optional canvas expansion.",
-            "Validate transformation parameters.",
-            "Compare interpolation methods.",
-        ],
-        "tools": ["Python", "Jupyter Notebook", "NumPy", "OpenCV", "Matplotlib"],
-    },
-}
-
 START = "<!-- AUTO-GENERATED-README:START -->"
 END = "<!-- AUTO-GENERATED-README:END -->"
 
@@ -123,17 +11,65 @@ IGNORE = {
     ".ipynb_checkpoints", "node_modules"
 }
 
-CATEGORIES = {
-    "Python files": {".py"},
-    "Jupyter notebooks": {".ipynb"},
-    "Images and outputs": {".png", ".jpg", ".jpeg", ".bmp", ".gif"},
-    "Reports and documents": {".pdf", ".docx", ".doc"},
-    "Other files": set(),
+# Detailed information for existing labs
+LAB_INFO = {
+    "DIP_Lab_01": {
+        "title": "Python Setup, Fundamentals, and Imports",
+        "objective": "Learn Python setup, programming fundamentals, functions, collections, and package imports.",
+        "topics": [
+            "Python installation and VS Code",
+            "Variables and data types",
+            "Conditional statements and loops",
+            "Functions and collections",
+            "Installing and importing libraries"
+        ]
+    },
+    "DIP_Lab_02": {
+        "title": "Digital Images, Pixels, Color, and Basic Transformations",
+        "objective": "Load, inspect, display, analyze, and transform digital images.",
+        "topics": [
+            "Image dimensions and pixel values",
+            "RGB, BGR, and grayscale",
+            "Color channels",
+            "Cropping and resizing",
+            "Histograms and bit depth"
+        ]
+    },
+    "DIP_Lab_03": {
+        "title": "Image Enhancement and Intensity Transformations",
+        "objective": "Implement and compare image enhancement and intensity transformations.",
+        "topics": [
+            "Brightness and contrast",
+            "Image negative",
+            "Gamma correction",
+            "Histogram equalization",
+            "CLAHE and thresholding"
+        ]
+    },
+    "DIP_Lab_04": {
+        "title": "Geometric Transformations with Custom Inputs",
+        "objective": "Apply geometric transformations using custom parameters and input validation.",
+        "topics": [
+            "Scaling and resizing",
+            "Cropping and flipping",
+            "Image translation and rotation",
+            "Interpolation methods",
+            "Canvas expansion and validation"
+        ]
+    }
 }
 
 
+def get_title(folder_name):
+    if folder_name in LAB_INFO:
+        return LAB_INFO[folder_name]["title"]
+
+    number = folder_name.replace("DIP_Lab_", "")
+    return f"Digital Image Processing - Lab {number}"
+
+
 def get_files(folder):
-    result = []
+    files = []
 
     for path in sorted(folder.rglob("*")):
         if not path.is_file():
@@ -147,31 +83,38 @@ def get_files(folder):
         if path.name.lower() == "readme.md":
             continue
 
-        result.append(relative.as_posix())
+        files.append(relative.as_posix())
 
-    return result
+    return files
 
 
 def categorize_files(files):
-    groups = {name: [] for name in CATEGORIES}
+    categories = {
+        "Python Files": [],
+        "Jupyter Notebooks": [],
+        "Images and Outputs": [],
+        "Reports and Documents": [],
+        "Other Files": []
+    }
 
     for filename in files:
-        extension = Path(filename).suffix.lower()
-        matched = False
+        ext = Path(filename).suffix.lower()
 
-        for category, extensions in CATEGORIES.items():
-            if extension in extensions:
-                groups[category].append(filename)
-                matched = True
-                break
+        if ext == ".py":
+            categories["Python Files"].append(filename)
+        elif ext == ".ipynb":
+            categories["Jupyter Notebooks"].append(filename)
+        elif ext in [".png", ".jpg", ".jpeg", ".bmp", ".gif"]:
+            categories["Images and Outputs"].append(filename)
+        elif ext in [".pdf", ".docx", ".doc"]:
+            categories["Reports and Documents"].append(filename)
+        else:
+            categories["Other Files"].append(filename)
 
-        if not matched:
-            groups["Other files"].append(filename)
-
-    return groups
+    return categories
 
 
-def make_file_list(files):
+def file_links(files):
     if not files:
         return "- No files detected yet."
 
@@ -180,45 +123,49 @@ def make_file_list(files):
     )
 
 
-def make_documentation(folder_name, info, files):
-    groups = categorize_files(files)
+def make_lab_content(folder_name, title, files):
+    info = LAB_INFO.get(folder_name)
 
-    sections = []
+    if info:
+        objective = info["objective"]
+        topics = "\n".join(
+            f"- {topic}" for topic in info["topics"]
+        )
+    else:
+        objective = (
+            "This lab folder was detected automatically. "
+            "Add its assignment objectives and topics to the "
+            "project documentation when available."
+        )
+        topics = (
+            "- Topics will be documented when assignment details "
+            "are available."
+        )
 
-    for category, category_files in groups.items():
+    categories = categorize_files(files)
+
+    file_sections = []
+
+    for category, category_files in categories.items():
         if category_files:
-            sections.append(
-                f"### {category}\n\n{make_file_list(category_files)}"
+            file_sections.append(
+                f"### {category}\n\n{file_links(category_files)}"
             )
 
-    file_sections = "\n\n".join(sections)
-
-    topics = "\n".join(f"- {item}" for item in info["topics"])
-    outcomes = "\n".join(f"- {item}" for item in info["outcomes"])
-    tools = ", ".join(info["tools"])
+    grouped_files = "\n\n".join(file_sections)
 
     return f"""
 ## Lab Overview
 
-{info["objective"]}
+{objective}
 
 ## Topics Covered
 
 {topics}
 
-## Learning Outcomes
-
-{outcomes}
-
-## Tools and Technologies
-
-{tools}
-
 ## Repository Files
 
-The following files were detected automatically in this lab folder.
-
-{file_sections}
+{grouped_files if grouped_files else "No files detected yet."}
 
 ## Lab Statistics
 
@@ -227,9 +174,9 @@ The following files were detected automatically in this lab folder.
 
 ## Documentation Note
 
-This README is automatically refreshed when repository changes are pushed.
-The file list reflects the current repository contents. It does not
-automatically verify that every assignment exercise is complete.
+This README is automatically updated using the files detected
+inside this folder. File presence does not confirm that every
+assignment requirement has been completed.
 """
 
 
@@ -254,26 +201,30 @@ def update_readme(path, title, content):
 
 
 def main():
+    lab_folders = sorted(
+        folder for folder in ROOT.glob("DIP_Lab_*")
+        if folder.is_dir()
+    )
+
     lab_links = []
 
-    for folder_name, info in LABS.items():
-        folder = ROOT / folder_name
-
-        if not folder.is_dir():
-            print(f"Skipping missing folder: {folder_name}")
-            continue
-
+    for folder in lab_folders:
+        folder_name = folder.name
+        title = get_title(folder_name)
         files = get_files(folder)
-        content = make_documentation(folder_name, info, files)
+
+        content = make_lab_content(
+            folder_name, title, files
+        )
 
         update_readme(
             folder / "README.md",
-            info["title"],
+            title,
             content
         )
 
         lab_links.append(
-            f"- [{folder_name} — {info['title']}]"
+            f"- [{folder_name}: {title}]"
             f"({folder_name}/README.md) — {len(files)} files"
         )
 
@@ -282,14 +233,13 @@ def main():
     main_content = f"""
 ## About This Repository
 
-This repository contains practical work for the
-**Digital Image Processing** course.
+Digital Image Processing practical work and lab documentation.
 
 ## Lab Documentation
 
-{chr(10).join(lab_links)}
+{chr(10).join(lab_links) if lab_links else "No lab folders detected."}
 
-## Technologies Used
+## Technologies
 
 - Python
 - Jupyter Notebook
@@ -297,16 +247,17 @@ This repository contains practical work for the
 - OpenCV
 - Matplotlib
 
-## Automatic Documentation System
+## Automatic Documentation
 
-Individual lab README files and this main README are refreshed
+This README and individual lab README files are updated
 automatically using Python and GitHub Actions.
+
+New folders matching `DIP_Lab_*` are detected automatically.
 
 ## Documentation Accuracy
 
-Lab descriptions are based on the assignment topics.
-Repository file lists are detected automatically.
-File presence alone does not confirm assignment completion.
+File lists are generated from repository contents.
+Assignment completion is not automatically verified.
 """
 
     update_readme(
@@ -315,7 +266,7 @@ File presence alone does not confirm assignment completion.
         main_content
     )
 
-    print("All available README files updated successfully!")
+    print("All README files generated successfully!")
 
 
 if __name__ == "__main__":
