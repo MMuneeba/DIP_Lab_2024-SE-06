@@ -32,17 +32,48 @@ operation (`scale`, `crop`, `flip`, `translate`, `rotate`) and its parameters wh
 <!-- AUTO-GENERATED-README:START -->
 ## Lab Overview
 
-**Topic:** Geometric Transformations with Custom Inputs
+Build a reusable image transformation function that accepts custom parameters and validates user inputs.
 
-This section describes the files currently present in this lab folder.
-It does not assume that every assigned exercise is completed.
+## Topics Covered
+
+- Image scaling and resizing
+- Image cropping
+- Horizontal and vertical flipping
+- Image translation
+- Image rotation
+- Interpolation methods
+- Canvas expansion and clipping
+- Input validation and error handling
+
+## Learning Outcomes
+
+- Resize images using custom scale factors.
+- Crop images using coordinate boundaries.
+- Flip images in different directions.
+- Translate images using custom offsets.
+- Rotate images with optional canvas expansion.
+- Validate transformation parameters.
+- Compare interpolation methods.
+
+## Tools and Technologies
+
+Python, Jupyter Notebook, NumPy, OpenCV, Matplotlib
 
 ## Repository Files
 
-- [`2024-SE-06-LAB04.ipynb`](./2024-SE-06-LAB04.ipynb)
+The following files were detected automatically in this lab folder.
+
+### Python files
+
 - [`generate_input_image.py`](./generate_input_image.py)
+
+### Jupyter notebooks
+
+- [`2024-SE-06-LAB04.ipynb`](./2024-SE-06-LAB04.ipynb)
+
+### Images and outputs
+
 - [`input_image.png`](./input_image.png)
-- [`requirements.txt`](./requirements.txt)
 - [`saved_results/01_scale_enlarge_proportional_1.5x_bicubic.png`](./saved_results/01_scale_enlarge_proportional_1.5x_bicubic.png)
 - [`saved_results/02_scale_reduce_proportional_0.5x_bilinear.png`](./saved_results/02_scale_reduce_proportional_0.5x_bilinear.png)
 - [`saved_results/03_scale_nonproportional_fx1.8_fy0.6_lanczos.png`](./saved_results/03_scale_nonproportional_fx1.8_fy0.6_lanczos.png)
@@ -64,9 +95,18 @@ It does not assume that every assigned exercise is completed.
 - [`saved_results/interactive_02_rotate.png`](./saved_results/interactive_02_rotate.png)
 - [`saved_results/interactive_03_crop.png`](./saved_results/interactive_03_crop.png)
 
-## File Summary
+### Other files
 
-- Total files detected: 24
-- Folder: `DIP_Lab_04`
-- Documentation is refreshed automatically when repository changes are pushed.
+- [`requirements.txt`](./requirements.txt)
+
+## Lab Statistics
+
+- Lab folder: `DIP_Lab_04`
+- Total detected files: **24**
+
+## Documentation Note
+
+This README is automatically refreshed when repository changes are pushed.
+The file list reflects the current repository contents. It does not
+automatically verify that every assignment exercise is complete.
 <!-- AUTO-GENERATED-README:END -->
