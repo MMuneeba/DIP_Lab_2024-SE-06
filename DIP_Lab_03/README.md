@@ -3,48 +3,27 @@
 <!-- AUTO-GENERATED-README:START -->
 ## Lab Overview
 
-Implement and compare intensity transformations and histogram-based image enhancement techniques.
+Implement and compare image enhancement and intensity transformations.
 
 ## Topics Covered
 
-- Brightness adjustment
-- Linear contrast enhancement
-- Contrast stretching
-- Image negative transformation
+- Brightness and contrast
+- Image negative
 - Gamma correction
-- Grayscale histogram analysis
 - Histogram equalization
-- CLAHE
-- Binary thresholding
-- Otsu thresholding
-- Adaptive Gaussian thresholding
-
-## Learning Outcomes
-
-- Apply brightness and contrast transformations.
-- Understand gamma correction.
-- Analyze grayscale histograms.
-- Perform histogram equalization.
-- Apply global and adaptive thresholding.
-- Compare image enhancement results.
-
-## Tools and Technologies
-
-Python, Jupyter Notebook, NumPy, OpenCV, Matplotlib
+- CLAHE and thresholding
 
 ## Repository Files
 
-The following files were detected automatically in this lab folder.
-
-### Jupyter notebooks
+### Jupyter Notebooks
 
 - [`2024-SE-06-LAB03.ipynb`](./2024-SE-06-LAB03.ipynb)
 
-### Images and outputs
+### Images and Outputs
 
 - [`input_image.png`](./input_image.png)
 
-### Reports and documents
+### Reports and Documents
 
 - [`2024-SE-06-LAB03.pdf`](./2024-SE-06-LAB03.pdf)
 
@@ -55,7 +34,7 @@ The following files were detected automatically in this lab folder.
 
 ## Documentation Note
 
-This README is automatically refreshed when repository changes are pushed.
-The file list reflects the current repository contents. It does not
-automatically verify that every assignment exercise is complete.
+This README is automatically updated using the files detected
+inside this folder. File presence does not confirm that every
+assignment requirement has been completed.
 <!-- AUTO-GENERATED-README:END -->

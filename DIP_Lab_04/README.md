@@ -32,46 +32,27 @@ operation (`scale`, `crop`, `flip`, `translate`, `rotate`) and its parameters wh
 <!-- AUTO-GENERATED-README:START -->
 ## Lab Overview
 
-Build a reusable image transformation function that accepts custom parameters and validates user inputs.
+Apply geometric transformations using custom parameters and input validation.
 
 ## Topics Covered
 
-- Image scaling and resizing
-- Image cropping
-- Horizontal and vertical flipping
-- Image translation
-- Image rotation
+- Scaling and resizing
+- Cropping and flipping
+- Image translation and rotation
 - Interpolation methods
-- Canvas expansion and clipping
-- Input validation and error handling
-
-## Learning Outcomes
-
-- Resize images using custom scale factors.
-- Crop images using coordinate boundaries.
-- Flip images in different directions.
-- Translate images using custom offsets.
-- Rotate images with optional canvas expansion.
-- Validate transformation parameters.
-- Compare interpolation methods.
-
-## Tools and Technologies
-
-Python, Jupyter Notebook, NumPy, OpenCV, Matplotlib
+- Canvas expansion and validation
 
 ## Repository Files
 
-The following files were detected automatically in this lab folder.
-
-### Python files
+### Python Files
 
 - [`generate_input_image.py`](./generate_input_image.py)
 
-### Jupyter notebooks
+### Jupyter Notebooks
 
 - [`2024-SE-06-LAB04.ipynb`](./2024-SE-06-LAB04.ipynb)
 
-### Images and outputs
+### Images and Outputs
 
 - [`input_image.png`](./input_image.png)
 - [`saved_results/01_scale_enlarge_proportional_1.5x_bicubic.png`](./saved_results/01_scale_enlarge_proportional_1.5x_bicubic.png)
@@ -95,7 +76,7 @@ The following files were detected automatically in this lab folder.
 - [`saved_results/interactive_02_rotate.png`](./saved_results/interactive_02_rotate.png)
 - [`saved_results/interactive_03_crop.png`](./saved_results/interactive_03_crop.png)
 
-### Other files
+### Other Files
 
 - [`requirements.txt`](./requirements.txt)
 
@@ -106,7 +87,7 @@ The following files were detected automatically in this lab folder.
 
 ## Documentation Note
 
-This README is automatically refreshed when repository changes are pushed.
-The file list reflects the current repository contents. It does not
-automatically verify that every assignment exercise is complete.
+This README is automatically updated using the files detected
+inside this folder. File presence does not confirm that every
+assignment requirement has been completed.
 <!-- AUTO-GENERATED-README:END -->

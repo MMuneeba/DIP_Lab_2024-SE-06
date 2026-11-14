@@ -3,51 +3,33 @@
 <!-- AUTO-GENERATED-README:START -->
 ## Lab Overview
 
-Load, inspect, display, analyze, and transform digital images using Python libraries.
+Load, inspect, display, analyze, and transform digital images.
 
 ## Topics Covered
 
-- Reading and displaying digital images
-- Image dimensions, shape, and data types
-- Pixel coordinates and pixel values
-- RGB and BGR color spaces
-- Grayscale conversion and color channels
-- Image cropping and resizing
-- Grayscale histograms
-- Image bit depth and intensity levels
-
-## Learning Outcomes
-
-- Understand image dimensions and pixel values.
-- Identify color channels.
-- Convert color images to grayscale.
-- Crop and resize images.
-- Plot grayscale histograms.
-- Understand resolution and bit depth.
-
-## Tools and Technologies
-
-Python, Jupyter Notebook, NumPy, OpenCV, Matplotlib
+- Image dimensions and pixel values
+- RGB, BGR, and grayscale
+- Color channels
+- Cropping and resizing
+- Histograms and bit depth
 
 ## Repository Files
 
-The following files were detected automatically in this lab folder.
-
-### Jupyter notebooks
+### Jupyter Notebooks
 
 - [`lab02.ipynb`](./lab02.ipynb)
 
-### Images and outputs
+### Images and Outputs
 
 - [`grayscale_histogram.png`](./grayscale_histogram.png)
 - [`my_image.png`](./my_image.png)
 - [`resized_crop.png`](./resized_crop.png)
 
-### Reports and documents
+### Reports and Documents
 
 - [`DIP_Lab_02_2024-SE-06.pdf`](./DIP_Lab_02_2024-SE-06.pdf)
 
-### Other files
+### Other Files
 
 - [`.gitignore.txt`](./.gitignore.txt)
 
@@ -58,7 +40,7 @@ The following files were detected automatically in this lab folder.
 
 ## Documentation Note
 
-This README is automatically refreshed when repository changes are pushed.
-The file list reflects the current repository contents. It does not
-automatically verify that every assignment exercise is complete.
+This README is automatically updated using the files detected
+inside this folder. File presence does not confirm that every
+assignment requirement has been completed.
 <!-- AUTO-GENERATED-README:END -->
